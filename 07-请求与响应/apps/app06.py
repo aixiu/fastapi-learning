@@ -1,14 +1,9 @@
-from fastapi import APIRouter, Form, File, UploadFile, Request
-from pydantic import BaseModel, Field, field_validator
-from datetime import date
-from typing import List, Optional, Union
-from pathlib import Path
-
+from fastapi import APIRouter, Request
 
 app06 = APIRouter()
 
 @app06.post("/items")
-async def items(request:Request):
+async def items(request: Request):
     # 适合小文件上传
     print("URL:", request.url)
     print("客户端IP地址:", request.client.host)

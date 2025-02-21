@@ -14,9 +14,12 @@ from apps.app07 import app07
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-app = FastAPI()
+app = FastAPI(title="FastAPI-Aixiu")
 
 app.mount("/static", StaticFiles(directory="statics"))
+# 路由挂载 静态文件 作用是将一个静态文件目录挂载到应用中，使其可以通过URL访问。
+# 例如，将一个名为statics的目录挂载到/static路径，那么statics目录中的文件可以通过http://
+# localhost:8000/static/文件名 访问。
 
 app.include_router(app01, tags=["01 路径参数"])
 app.include_router(app02, tags=["02 查询参数"])
