@@ -1,3 +1,6 @@
+# socket 反复连接
+# https://blog.51cto.com/u_15726470/10131125
+
 import socket
 
 # 创建一个TCP/IP套接字
