@@ -26,6 +26,10 @@ def index(request:Request):
     
     info = {"name": "rain", "age":32, "gender": "male"}
     
+    pai = 3.1415926
+    
+    movies = {"chengnian_movies": ["日韩", "欧美", "国产"], "qingshaonian_movies": ["黑猫警长", "熊出没", "大头儿子"]}
+    
     return templates.TemplateResponse(
         "index.html", # 模板文件
         {   
@@ -33,7 +37,9 @@ def index(request:Request):
             "user": name,
             "age": age,
             "books": books,
-            "info": info
+            "info": info,
+            "pai": pai,
+            "movies": movies
         }, # context上下文对象，一个字典
     )
 

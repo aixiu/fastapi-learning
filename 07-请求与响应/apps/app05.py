@@ -1,9 +1,6 @@
-from fastapi import APIRouter, Form, File, UploadFile
-from pydantic import BaseModel, Field, field_validator
-from datetime import date
-from typing import List, Optional, Union
 from pathlib import Path
 
+from fastapi import APIRouter, File, UploadFile
 
 app05 = APIRouter()
 
@@ -24,9 +21,10 @@ async def get_files(files:list[bytes]=File()):
     return {
         "file": len(files)
     }
-    
+
+# 常用的上传单个文件方法    
 @app05.post("/uploadFile")
-async def uploadFile(file:UploadFile):
+async def uploadFile(file: UploadFile):
     # 适合大文件上传
     print("file ", file)
     
@@ -42,7 +40,8 @@ async def uploadFile(file:UploadFile):
     return {
         "file": file.filename
     }
-    
+
+# 常用的上传多个文件方法    
 @app05.post("/uploadFiles")
 async def UploadFiles(files:list[UploadFile]):
     # 适合大文件上传

@@ -1,8 +1,6 @@
-from fastapi import APIRouter, Form, File, UploadFile, Request
-from pydantic import BaseModel, Field, field_validator, EmailStr
-from datetime import date
-from typing import List, Optional, Union
-from pathlib import Path
+from fastapi import APIRouter
+from pydantic import BaseModel, EmailStr
+from typing import Union
 
 
 app07 = APIRouter()
